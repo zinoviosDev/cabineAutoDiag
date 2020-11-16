@@ -1,4 +1,4 @@
-# cabAutoDiag
+# cabine d'auto-diagnostic
 
 ## Packaging de l'application
 	mvn clean package spring-boot:repackage
@@ -10,3 +10,6 @@
 L'application utilise la librairie Lombok
 Suivre les indications sur le site pour permettre le fonctionnement de Lombok avec votre IDE
 (ex. pour [Eclipse](https://projectlombok.org/setup/eclipse) )
+
+## Démo de l'application
+L'application dockerisée est visible sur [Heroku](https://dashboard.heroku.com/apps/cabautodiag-spring-boot-docker)
