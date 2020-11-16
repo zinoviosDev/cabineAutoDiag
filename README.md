@@ -12,4 +12,4 @@ Suivre les indications sur le site pour permettre le fonctionnement de Lombok av
 (ex. pour [Eclipse](https://projectlombok.org/setup/eclipse) )
 
 ## Démo de l'application
-L'application dockerisée est visible sur [Heroku](https://dashboard.heroku.com/apps/cabautodiag-spring-boot-docker)
+L'application dockerisée est visible sur [Heroku](https://cabautodiag-spring-boot-docker.herokuapp.com/)
