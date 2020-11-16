@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr" th:fragment="parcours_patient">
+	<head>
+		<title>Parcours patients</title>
+		<meta content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="/webjars/bootstrap/3.1.0/css/bootstrap.min.css" />
+		<style>
+			body {
+			    color: #9bb3e1;
+			    background: #201c1c;
+			    font-family: 'Roboto', sans-serif;
+			}
+			
+			table.table tr th, table.table tr td {
+			    border-color: #e9e9e9;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="parcours_patient" class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Parcours patients</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<form>
+						<table class="table table-bordered">
+							<caption>Services hospitaliers correspondant à l'index de santé du patient</caption>
+							<thead>
+								<th>Index de santé</th>
+								<th>Services hospitaliers</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td th:text="${patient.healthIndex}"> Patient</td>
+									<td th:if="${services.empty}">
+											Aucun service (pas de pathologie détectée)
+									</td>
+									<td th:if="${!services.empty}">
+										<div  th:each="service : ${services}">
+											<span th:text="${service.nom}"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<button id="newDiagButton" class="btn btn-primary"><em class="glyphicon glyphicon-refresh"></em> Nouveau diagnostic</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+		<script src="/webjars/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#newDiagButton").click(function() {
+				// $('.parcours_patient').load("/");
+			});
+		});
+	</script>
+</body>
+</html>
