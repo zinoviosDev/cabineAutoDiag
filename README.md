@@ -12,4 +12,4 @@ L'application dockerisée est visible sur [Heroku](https://dashboard.heroku.com/
 ## Intégration du code source dans une IDE
 L'application utilise la librairie Lombok
 Suivre les indications sur le site pour permettre le fonctionnement de Lombok avec votre IDE
-(ex. pour [Eclipse](https://projectlombok.org/setup/eclipse) )
+(ex. pour [Eclipse](https://projectlombok.org/setup/eclipse)).
