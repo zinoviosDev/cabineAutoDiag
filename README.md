@@ -4,7 +4,7 @@
 	mvn clean package spring-boot:repackage
 
 ## Lancement de l'application
-	java -jar target\cabine-0.0.1-SNAPSHOT.jar
+	java -jar target\cabine-0.0.2-SNAPSHOT.jar
 
 ## Intégration du code source dans une IDE
 L'application utilise la librairie Lombok
