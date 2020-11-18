@@ -3,6 +3,9 @@ package diagauto.cabine.model.pathologies;
 import java.io.Serializable;
 import java.util.List;
 
+import diagauto.cabine.model.activite.services.ServiceHospitalier;
+import diagauto.cabine.model.activite.services.Traumatologie;
+import diagauto.cabine.util.math.RandomIntegers;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -19,6 +22,11 @@ public class Fracture extends Pathologie  implements Serializable {
 	
 	public Fracture(String nom, List<String> symptomes) {
 		super(nom, symptomes);
+	}
+
+	@Override
+	public ServiceHospitalier getServiceHospitalier() {
+		return new Traumatologie("traumatologie", String.valueOf(RandomIntegers.getRandomIntBetween(1, 100000000)));
 	}
 	
 }

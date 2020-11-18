@@ -7,9 +7,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import diagauto.cabine.model.activite.Decision;
-import diagauto.cabine.model.activite.services.Cardiologie;
-import diagauto.cabine.model.activite.services.ServiceHospitalier;
-import diagauto.cabine.model.activite.services.Traumatologie;
 import diagauto.cabine.model.parcours.Parcours;
 import diagauto.cabine.model.pathologies.Fracture;
 import diagauto.cabine.model.pathologies.Pathologie;
@@ -55,22 +52,10 @@ public class DefinitionParcoursPatientServiceImpl implements DefinitionParcoursP
 			Decision decision = new Decision();
 			decision.setCode(String.valueOf(RandomIntegers.getRandomIntBetween(1, 100000000)));
 			decision.setDescription("pathologie " + pathologie.getNom());
-			decision.setService(this.findServiceForPathologie(pathologie));
+			decision.setService(pathologie.getServiceHospitalier());
 			decisions.add(decision);
 		}
 		parcours.setDecisions(decisions);
 		return parcours;
 	}
-	
-	private ServiceHospitalier findServiceForPathologie(Pathologie pathologie) {
-		ServiceHospitalier service = null;
-		if(pathologie instanceof Fracture) {
-			service = new Traumatologie("traumatologie", String.valueOf(RandomIntegers.getRandomIntBetween(1, 100000000)));
-		}
-		else if(pathologie instanceof ProblemeCardiaque) {
-			service = new Cardiologie("cardiologie", String.valueOf(RandomIntegers.getRandomIntBetween(1, 100000000)));
-		}
-		return service;
-	}
-
 }

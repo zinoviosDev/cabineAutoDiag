@@ -3,6 +3,9 @@ package diagauto.cabine.model.pathologies;
 import java.io.Serializable;
 import java.util.List;
 
+import diagauto.cabine.model.activite.services.Cardiologie;
+import diagauto.cabine.model.activite.services.ServiceHospitalier;
+import diagauto.cabine.util.math.RandomIntegers;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -20,4 +23,8 @@ public class ProblemeCardiaque extends Pathologie  implements Serializable {
 	}
 
 	private static final long serialVersionUID = 8665997904725113645L;
+
+	public ServiceHospitalier getServiceHospitalier() {
+		return new Cardiologie("cardiologie", String.valueOf(RandomIntegers.getRandomIntBetween(1, 100000000)));
+	}
 }

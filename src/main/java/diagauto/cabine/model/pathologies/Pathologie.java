@@ -3,6 +3,7 @@ package diagauto.cabine.model.pathologies;
 import java.io.Serializable;
 import java.util.List;
 
+import diagauto.cabine.model.activite.services.ServiceHospitalier;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,4 +25,6 @@ public abstract class Pathologie  implements Serializable {
 		this.nom = nom;
 		this.symptomes = symptomes;
 	}
+	
+	public abstract ServiceHospitalier getServiceHospitalier();
 }
