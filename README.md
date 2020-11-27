@@ -1,7 +1,7 @@
 # cabine d'auto-diagnostic
 
 ## Démo de l'application
-L'application dockerisée est visible sur [Heroku](https://dashboard.heroku.com/apps/cabautodiag-spring-boot-docker)
+L'application dockerisée est visible sur [Heroku](https://cabautodiag-spring-boot-docker.herokuapp.com/)
 
 ## Packaging de l'application
 	mvn clean package spring-boot:repackage
